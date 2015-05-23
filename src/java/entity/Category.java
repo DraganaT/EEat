@@ -90,7 +90,13 @@ public class Category implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
+       
+		if(id != null)
+			id=id.hashCode();
+		else
+			id=0;
+		
+		hash += id;
         return hash;
     }
 
